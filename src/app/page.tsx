@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Hero from "@/components/Hero";
 
 export default function Home() {
@@ -105,6 +106,48 @@ export default function Home() {
                 <p className="text-gray-600 text-sm">{reason.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Work */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Featured Projects
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              A sample of what we&apos;ve built across the Chippewa Valley
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+            {[
+              { src: "/images/portfolio/home-entry-stone-walkway.jpg",  alt: "Custom home entry with stone walkway and pergola" },
+              { src: "/images/portfolio/log-home-patio-firepit.jpg",    alt: "Log home patio with fire pit and landscaping" },
+              { src: "/images/portfolio/firepit-boulder-patio.jpg",     alt: "Patio with fire pit and natural boulder wall" },
+              { src: "/images/portfolio/landscape-mulch-beds.jpg",      alt: "Ornamental grass and perennial mulch beds" },
+            ].map((photo, i) => (
+              <div key={i} className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition group">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/portfolio"
+              className="inline-block bg-brand-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-green-500 transition"
+            >
+              View All Projects
+            </Link>
           </div>
         </div>
       </section>
