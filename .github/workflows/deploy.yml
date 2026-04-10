@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.DO_USER }}
           key: ${{ secrets.DO_SSH_KEY }}
           script: |
-            cd ~/thorp-landscaping
+            cd /var/www/thorp-landscaping
             git pull origin main
             npm install
             npm run build
