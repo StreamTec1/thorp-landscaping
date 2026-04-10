@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -31,6 +32,18 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://thorp-landscaping.com",
     siteName: "Thorp Landscaping",
+    images: [
+      {
+        url: "https://thorp-landscaping.com/images/thorp-logo.png",
+        width: 320,
+        height: 185,
+        alt: "Thorp Landscaping",
+      },
+    ],
+  },
+  icons: {
+    icon: "/images/thorp-logo.png",
+    apple: "/images/thorp-logo.png",
   },
 };
 
@@ -87,6 +100,22 @@ export default function RootLayout({
         />
       </head>
       <body className="flex flex-col min-h-screen bg-white text-gray-900">
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
