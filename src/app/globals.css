@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Brand colors - derived from Thorp Landscaping logo */
+  --color-brand-green-50: #e8f5e9;
+  --color-brand-green-100: #c8e6c9;
+  --color-brand-green-200: #a5d6a7;
+  --color-brand-green-300: #66bb6a;
+  --color-brand-green-400: #43a047;
+  --color-brand-green-500: #2e7d32;
+  --color-brand-green-600: #1b5e20;
+  --color-brand-green-700: #145218;
+  --color-brand-green-800: #0d3b10;
+  --color-brand-green-900: #072508;
+
+  --color-brand-gold-50: #fff8e1;
+  --color-brand-gold-100: #ffecb3;
+  --color-brand-gold-200: #ffe082;
+  --color-brand-gold-300: #ffd54f;
+  --color-brand-gold-400: #f9a825;
+  --color-brand-gold-500: #e8a817;
+  --color-brand-gold-600: #d4a017;
+  --color-brand-gold-700: #b8860b;
+  --color-brand-gold-800: #8d6e0a;
+  --color-brand-gold-900: #5d4a07;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
