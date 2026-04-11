@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -20,6 +21,8 @@ export default function ServicesPage() {
         "Flower beds and garden areas",
         "Grading and drainage solutions",
       ],
+      image: "/images/portfolio/home-entry-stone-walkway.jpg",
+      imageAlt: "Custom home entry with stone walkway and landscape design",
     },
     {
       title: "Snow Removal",
@@ -32,6 +35,8 @@ export default function ServicesPage() {
         "Salt and sand application",
         "Seasonal contracts available",
       ],
+      image: null,
+      imageAlt: "",
     },
     {
       title: "Hardscaping",
@@ -44,6 +49,8 @@ export default function ServicesPage() {
         "Stone and boulder work",
         "Steps and staircases",
       ],
+      image: "/images/portfolio/stone-retaining-wall.jpg",
+      imageAlt: "Stacked stone retaining wall with tiered planting beds",
     },
     {
       title: "Lawn Care & Maintenance",
@@ -56,6 +63,8 @@ export default function ServicesPage() {
         "Weed and pest management",
         "Irrigation system maintenance",
       ],
+      image: "/images/portfolio/landscape-mulch-beds.jpg",
+      imageAlt: "Ornamental grass and perennial mulch beds",
     },
     {
       title: "Spring & Fall Cleanup",
@@ -68,6 +77,8 @@ export default function ServicesPage() {
         "Perennial cutback",
         "Gutter cleaning",
       ],
+      image: "/images/portfolio/flower-garden-boulders.jpg",
+      imageAlt: "Colorful flower garden accented with natural boulders",
     },
     {
       title: "Landscape Renovation",
@@ -80,16 +91,27 @@ export default function ServicesPage() {
         "Landscape lighting",
         "Erosion control",
       ],
+      image: "/images/portfolio/rock-garden-birch.jpg",
+      imageAlt: "Natural rock garden with birch trees and perennial flowers",
     },
   ];
 
   return (
     <div>
       {/* Hero */}
-      <div className="bg-gradient-to-b from-brand-green-50 to-white py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">Our Services</h1>
-          <p className="text-xl text-gray-600 max-w-2xl">
+      <div className="relative overflow-hidden py-20">
+        <Image
+          src="/images/portfolio/flagstone-patio-seating.jpg"
+          alt="Thorp Landscaping services"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-brand-green-900/70" />
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-5xl font-bold text-white mb-4">Our Services</h1>
+          <p className="text-xl text-gray-200 max-w-2xl">
             Comprehensive landscaping solutions for residential and commercial
             properties across the Chippewa Valley
           </p>
@@ -99,27 +121,52 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <div className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="space-y-20">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border-l-4 border-brand-green-600 pl-6"
+                className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-8 md:gap-12 items-center`}
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-3">
-                  {service.title}
-                </h2>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-center text-gray-700"
-                    >
-                      <span className="w-2 h-2 bg-brand-green-600 rounded-full mr-3 shrink-0"></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                {/* Image */}
+                <div className="w-full md:w-1/2">
+                  {service.image ? (
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+                      <Image
+                        src={service.image}
+                        alt={service.imageAlt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
+                  ) : (
+                    <div className="aspect-[4/3] bg-brand-green-50 rounded-lg flex items-center justify-center border border-brand-green-200">
+                      <div className="text-center p-8">
+                        <div className="text-5xl mb-3">❄️</div>
+                        <p className="text-brand-green-700 font-medium">Photos coming soon</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Content */}
+                <div className="w-full md:w-1/2">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-3">
+                    {service.title}
+                  </h2>
+                  <p className="text-gray-600 mb-6">{service.description}</p>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center text-gray-700"
+                      >
+                        <span className="w-2 h-2 bg-brand-green-600 rounded-full mr-3 shrink-0"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
@@ -127,12 +174,20 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA */}
-      <div className="bg-brand-green-600 py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative overflow-hidden py-16">
+        <Image
+          src="/images/portfolio/log-home-patio-firepit.jpg"
+          alt="Outdoor living space by Thorp Landscaping"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-brand-green-900/80" />
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to get started?
           </h2>
-          <p className="text-brand-green-100 text-lg mb-8">
+          <p className="text-gray-200 text-lg mb-8">
             Contact us today for a free estimate on any of our services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

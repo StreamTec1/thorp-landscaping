@@ -3,16 +3,21 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-brand-green-900 via-brand-green-700 to-brand-green-600 text-white overflow-hidden">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: "radial-gradient(circle at 25% 25%, white 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }} />
-      </div>
+    <section className="relative text-white overflow-hidden">
+      {/* Background Photo */}
+      <Image
+        src="/images/portfolio/home-entry-stone-walkway.jpg"
+        alt="Custom landscaping by Thorp Landscaping"
+        fill
+        className="object-cover"
+        priority
+        sizes="100vw"
+      />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-brand-green-900/70" />
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center">
         {/* Logo */}
         <div className="inline-block bg-white rounded-xl p-3 shadow-lg mb-8">
           <Image
@@ -30,7 +35,7 @@ export default function Hero() {
           Full-Service Landscaping in the{" "}
           <span className="text-brand-gold-400">Chippewa Valley</span>
         </h1>
-        <p className="text-lg md:text-xl text-brand-green-100 mb-6 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-200 mb-6 max-w-2xl mx-auto leading-relaxed">
           Trusted landscape design, installation, and maintenance for residential and commercial properties since 1995.
         </p>
 
