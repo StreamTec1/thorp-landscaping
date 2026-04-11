@@ -40,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# source portfolio images (too large for git, keep local only)
+/Portfolio Images/

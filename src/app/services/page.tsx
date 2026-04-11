@@ -25,20 +25,6 @@ export default function ServicesPage() {
       imageAlt: "Custom home entry with stone walkway and landscape design",
     },
     {
-      title: "Snow Removal",
-      description:
-        "Keep your property safe and accessible through Wisconsin winters with our reliable snow removal services.",
-      features: [
-        "Commercial lot clearing",
-        "Residential driveway service",
-        "Sidewalk and walkway clearing",
-        "Salt and sand application",
-        "Seasonal contracts available",
-      ],
-      image: null,
-      imageAlt: "",
-    },
-    {
       title: "Hardscaping",
       description:
         "Durable outdoor structures and surfaces designed to withstand Wisconsin weather and enhance your property.",
@@ -94,6 +80,20 @@ export default function ServicesPage() {
       image: "/images/portfolio/rock-garden-birch.jpg",
       imageAlt: "Natural rock garden with birch trees and perennial flowers",
     },
+    {
+      title: "Snow Removal",
+      description:
+        "Keep your property safe and accessible through Wisconsin winters with our reliable snow removal services.",
+      features: [
+        "Commercial lot clearing",
+        "Residential driveway service",
+        "Sidewalk and walkway clearing",
+        "Salt and sand application",
+        "Seasonal contracts available",
+      ],
+      image: null,
+      imageAlt: "",
+    },
   ];
 
   return (
@@ -108,7 +108,7 @@ export default function ServicesPage() {
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-brand-green-900/70" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold text-white mb-4">Our Services</h1>
           <p className="text-xl text-gray-200 max-w-2xl">
@@ -140,10 +140,12 @@ export default function ServicesPage() {
                       />
                     </div>
                   ) : (
-                    <div className="aspect-[4/3] bg-brand-green-50 rounded-lg flex items-center justify-center border border-brand-green-200">
+                    <div className="aspect-[4/3] bg-gray-100 rounded-lg flex items-center justify-center border border-gray-200">
                       <div className="text-center p-8">
-                        <div className="text-5xl mb-3">❄️</div>
-                        <p className="text-brand-green-700 font-medium">Photos coming soon</p>
+                        <svg className="w-16 h-16 text-gray-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                        </svg>
+                        <p className="text-gray-400 font-medium">Seasonal service</p>
                       </div>
                     </div>
                   )}
@@ -182,7 +184,7 @@ export default function ServicesPage() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-brand-green-900/80" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to get started?

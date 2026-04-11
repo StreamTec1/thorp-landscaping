@@ -8,33 +8,37 @@ export default function Home() {
       title: "Landscape Design & Installation",
       description:
         "Custom landscape plans designed and installed to transform your property year-round.",
-      icon: "🌿",
-    },
-    {
-      title: "Snow Removal",
-      description:
-        "Reliable commercial and residential snow removal to keep your property safe all winter.",
-      icon: "❄️",
+      image: "/images/portfolio/flower-garden-boulders.jpg",
+      imageAlt: "Colorful flower garden with natural boulders",
     },
     {
       title: "Hardscaping",
       description:
         "Patios, retaining walls, walkways, and outdoor living spaces built to last.",
-      icon: "🧱",
+      image: "/images/portfolio/stone-retaining-wall.jpg",
+      imageAlt: "Stacked stone retaining wall",
     },
     {
       title: "Seasonal Cleanup",
       description:
         "Spring and fall cleanup services to keep your landscape healthy through every season.",
-      icon: "🍂",
+      image: "/images/portfolio/landscape-mulch-beds.jpg",
+      imageAlt: "Ornamental grass and perennial mulch beds",
+    },
+    {
+      title: "Snow Removal",
+      description:
+        "Reliable commercial and residential snow removal to keep your property safe all winter.",
+      image: null,
+      imageAlt: "",
     },
   ];
 
   const reasons = [
-    { title: "31+ Years", description: "Serving the Chippewa Valley since 1995" },
-    { title: "A+ BBB Rating", description: "Trusted and highly rated" },
-    { title: "Locally Owned", description: "Proudly rooted in Chippewa Falls" },
-    { title: "Free Estimates", description: "No-obligation consultations" },
+    { title: "31+ Years", description: "Serving the Chippewa Valley since 1995", icon: "31+" },
+    { title: "A+ BBB Rating", description: "Trusted and highly rated", icon: "A+" },
+    { title: "Locally Owned", description: "Proudly rooted in Chippewa Falls", icon: "LC" },
+    { title: "Free Estimates", description: "No-obligation consultations", icon: "FE" },
   ];
 
   return (
@@ -58,13 +62,31 @@ export default function Home() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition border border-gray-100"
+                className="bg-gray-50 rounded-lg hover:shadow-lg transition border border-gray-100 overflow-hidden"
               >
-                <div className="text-5xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600">{service.description}</p>
+                {service.image ? (
+                  <div className="relative h-40 w-full">
+                    <Image
+                      src={service.image}
+                      alt={service.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 25vw"
+                    />
+                  </div>
+                ) : (
+                  <div className="h-40 w-full bg-gray-200 flex items-center justify-center">
+                    <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    </svg>
+                  </div>
+                )}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600">{service.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -97,7 +119,7 @@ export default function Home() {
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-brand-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-lg">
-                    {index === 0 ? "31+" : index === 1 ? "A+" : index === 2 ? "🏠" : "✓"}
+                    {reason.icon}
                   </span>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
