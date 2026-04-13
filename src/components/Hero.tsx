@@ -50,29 +50,75 @@ export default function Hero() {
   }, [current, goTo]);
 
   useEffect(() => {
-    const timer = setInterval(next, 5000);
+    const timer = setInterval(next, 7500);
     return () => clearInterval(timer);
   }, [next]);
 
+  const kenBurnsVariants = ["kb-in-center", "kb-pan-right", "kb-in-left", "kb-pan-left"];
+
   return (
     <section className="relative h-[75vh] md:h-[85vh] w-full overflow-hidden">
-      {slides.map((slide, index) => (
-        <div
-          key={slide.src}
-          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-            index === current ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
-        >
-          <Image
-            src={slide.src}
-            alt={slide.alt}
-            fill
-            className="object-cover"
-            priority={index === 0}
-            sizes="100vw"
-          />
-        </div>
-      ))}
+      <style jsx>{`
+        @keyframes kb-in-center {
+          0% { transform: scale(1) translate(0, 0); }
+          100% { transform: scale(1.15) translate(0, -1%); }
+        }
+        @keyframes kb-pan-right {
+          0% { transform: scale(1.05) translate(-2%, 0); }
+          100% { transform: scale(1.18) translate(2%, -1%); }
+        }
+        @keyframes kb-in-left {
+          0% { transform: scale(1) translate(2%, 1%); }
+          100% { transform: scale(1.17) translate(-2%, -1%); }
+        }
+        @keyframes kb-pan-left {
+          0% { transform: scale(1.05) translate(2%, 0); }
+          100% { transform: scale(1.18) translate(-2%, 1%); }
+        }
+        .ken-burns {
+          will-change: transform;
+          animation-duration: 9s;
+          animation-timing-function: ease-out;
+          animation-fill-mode: forwards;
+          animation-iteration-count: 1;
+        }
+        .ken-burns.kb-in-center { animation-name: kb-in-center; }
+        .ken-burns.kb-pan-right { animation-name: kb-pan-right; }
+        .ken-burns.kb-in-left { animation-name: kb-in-left; }
+        .ken-burns.kb-pan-left { animation-name: kb-pan-left; }
+        @media (prefers-reduced-motion: reduce) {
+          .ken-burns {
+            animation: none !important;
+            transform: none !important;
+          }
+        }
+      `}</style>
+      {slides.map((slide, index) => {
+        const isActive = index === current;
+        const variant = kenBurnsVariants[index % kenBurnsVariants.length];
+        return (
+          <div
+            key={slide.src}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              isActive ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          >
+            <div
+              key={isActive ? `${slide.src}-${current}` : slide.src}
+              className={`absolute inset-0 ${isActive ? `ken-burns ${variant}` : ""}`}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                className="object-cover"
+                priority={index === 0}
+                sizes="100vw"
+              />
+            </div>
+          </div>
+        );
+      })}
 
       {/* Gradient overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-20" />
