@@ -61,24 +61,24 @@ export default function Hero() {
       <style jsx>{`
         @keyframes kb-in-center {
           0% { transform: scale(1) translate(0, 0); }
-          100% { transform: scale(1.15) translate(0, -1%); }
+          100% { transform: scale(1.08) translate(0, -0.5%); }
         }
         @keyframes kb-pan-right {
-          0% { transform: scale(1.05) translate(-2%, 0); }
-          100% { transform: scale(1.18) translate(2%, -1%); }
+          0% { transform: scale(1.04) translate(-1%, 0); }
+          100% { transform: scale(1.09) translate(1%, -0.5%); }
         }
         @keyframes kb-in-left {
-          0% { transform: scale(1) translate(2%, 1%); }
-          100% { transform: scale(1.17) translate(-2%, -1%); }
+          0% { transform: scale(1) translate(1%, 0.5%); }
+          100% { transform: scale(1.08) translate(-1%, -0.5%); }
         }
         @keyframes kb-pan-left {
-          0% { transform: scale(1.05) translate(2%, 0); }
-          100% { transform: scale(1.18) translate(-2%, 1%); }
+          0% { transform: scale(1.04) translate(1%, 0); }
+          100% { transform: scale(1.09) translate(-1%, 0.5%); }
         }
         .ken-burns {
           will-change: transform;
-          animation-duration: 9s;
-          animation-timing-function: ease-out;
+          animation-duration: 12s;
+          animation-timing-function: linear;
           animation-fill-mode: forwards;
           animation-iteration-count: 1;
         }
