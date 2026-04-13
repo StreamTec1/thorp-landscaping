@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useCallback } from "react";
 
-type Category = "all" | "landscape" | "hardscape" | "outdoor" | "water" | "homes" | "snow";
+type Category = "all" | "landscape" | "hardscape" | "outdoor" | "homes";
 
 const projects: {
   src: string;
@@ -44,21 +44,13 @@ const projects: {
   { src: "/images/portfolio/adirondack-patio-woods.jpg",     alt: "Flagstone patio with Adirondack chairs and fire pit bordering woodland",  category: "outdoor" },
   { src: "/images/portfolio/firepit-adirondack-lawn.jpg",    alt: "Circular flagstone fire pit with Adirondack chairs on manicured lawn",    category: "outdoor" },
 
-  // Water Features
-  { src: "/images/portfolio/boulder-water-feature.jpg",      alt: "Large boulder water feature with flagstone patio and red perennials",     category: "water" },
-  { src: "/images/portfolio/boulder-dry-creek.jpg",          alt: "Boulder dry creek bed drainage feature with flagstone path",              category: "water" },
-  { src: "/images/portfolio/flagstone-path-pond.jpg",        alt: "Flagstone walkway leading to pond with perennial plantings",              category: "water" },
-  { src: "/images/portfolio/flagstone-walkway-lakefront.jpg",alt: "Curved flagstone walkway with gravel border on lakefront property",        category: "water" },
-
   // Homes & Exteriors
   { src: "/images/portfolio/craftsman-home-landscape.jpg",   alt: "Craftsman home with full landscape design and stone accent walls",        category: "homes" },
   { src: "/images/portfolio/stone-home-pergola.jpg",         alt: "Stone-base home with timber pergola and river rock plantings",            category: "homes" },
   { src: "/images/portfolio/timber-home-driveway.jpg",       alt: "Timber frame home with cedar accents and manicured driveway landscape",  category: "homes" },
   { src: "/images/portfolio/timber-stone-entry.jpg",         alt: "Timber and stone home entry with flagstone walkway and mulch beds",       category: "homes" },
   { src: "/images/portfolio/timber-stone-porch.jpg",         alt: "Timber home stone porch with perennial beds and cobbled walkway",         category: "homes" },
-
-  // Snow Removal
-  { src: "/images/portfolio/snow-removal.png",               alt: "Thorp Landscaping plow truck clearing snow from a commercial lot",        category: "snow" },
+  { src: "/images/portfolio/flagstone-walkway-lakefront.jpg",alt: "Curved flagstone walkway with gravel border on lakefront property",        category: "homes" },
 ];
 
 const categories: { id: Category; label: string; count: number }[] = [
@@ -66,9 +58,7 @@ const categories: { id: Category; label: string; count: number }[] = [
   { id: "landscape", label: "Landscape Design",   count: projects.filter(p => p.category === "landscape").length },
   { id: "hardscape", label: "Hardscaping",        count: projects.filter(p => p.category === "hardscape").length },
   { id: "outdoor",   label: "Outdoor Living",     count: projects.filter(p => p.category === "outdoor").length },
-  { id: "water",     label: "Water Features",     count: projects.filter(p => p.category === "water").length },
   { id: "homes",     label: "Homes & Exteriors",  count: projects.filter(p => p.category === "homes").length },
-  { id: "snow",      label: "Snow Removal",       count: projects.filter(p => p.category === "snow").length },
 ];
 
 export default function PortfolioPage() {

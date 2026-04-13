@@ -39,18 +39,18 @@ export default function ServicesPage() {
       imageAlt: "Stacked stone retaining wall with tiered planting beds",
     },
     {
-      title: "Lawn Care & Maintenance",
+      title: "Landscape Renovation",
       description:
-        "Professional lawn maintenance to keep your property looking its best from spring through fall.",
+        "Breathe new life into an existing landscape with renovation and enhancement services.",
       features: [
-        "Mowing and trimming",
-        "Fertilization programs",
-        "Aeration and overseeding",
-        "Weed and pest management",
-        "Irrigation system maintenance",
+        "Overgrown landscape restoration",
+        "Plant replacement and updating",
+        "Soil amendment and grading",
+        "Landscape lighting",
+        "Erosion control",
       ],
-      image: "/images/portfolio/landscape-mulch-beds.jpg",
-      imageAlt: "Ornamental grass and perennial mulch beds",
+      image: "/images/portfolio/rock-garden-birch.jpg",
+      imageAlt: "Natural rock garden with birch trees and perennial flowers",
     },
     {
       title: "Spring & Fall Cleanup",
@@ -67,18 +67,18 @@ export default function ServicesPage() {
       imageAlt: "Colorful flower garden accented with natural boulders",
     },
     {
-      title: "Landscape Renovation",
+      title: "Lawn Care & Maintenance",
       description:
-        "Breathe new life into an existing landscape with renovation and enhancement services.",
+        "Professional lawn maintenance to keep your property looking its best from spring through fall.",
       features: [
-        "Overgrown landscape restoration",
-        "Plant replacement and updating",
-        "Soil amendment and grading",
-        "Landscape lighting",
-        "Erosion control",
+        "Mowing and trimming",
+        "Fertilization programs",
+        "Aeration and overseeding",
+        "Weed and pest management",
+        "Irrigation system maintenance",
       ],
-      image: "/images/portfolio/rock-garden-birch.jpg",
-      imageAlt: "Natural rock garden with birch trees and perennial flowers",
+      image: "/images/portfolio/landscape-mulch-beds.jpg",
+      imageAlt: "Ornamental grass and perennial mulch beds",
     },
     {
       title: "Snow Removal",
@@ -99,12 +99,12 @@ export default function ServicesPage() {
   return (
     <div>
       {/* Hero */}
-      <div className="relative overflow-hidden py-20">
+      <div className="relative overflow-hidden py-20 min-h-[280px]">
         <Image
-          src="/images/portfolio/flagstone-patio-seating.jpg"
-          alt="Thorp Landscaping services"
+          src="/images/portfolio/stone-home-pergola.jpg"
+          alt="Stone-base home with timber pergola and river rock plantings"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
           priority
         />
@@ -176,12 +176,12 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA */}
-      <div className="relative overflow-hidden py-16">
+      <div className="relative overflow-hidden py-16 min-h-[280px]">
         <Image
-          src="/images/portfolio/log-home-patio-firepit.jpg"
-          alt="Outdoor living space by Thorp Landscaping"
+          src="/images/portfolio/craftsman-home-landscape.jpg"
+          alt="Craftsman home with full landscape design and stone accent walls"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/60" />
