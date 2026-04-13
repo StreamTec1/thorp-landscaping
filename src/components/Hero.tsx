@@ -124,17 +124,17 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-20" />
 
       {/* Overlapping text content */}
-      <div className="absolute bottom-0 left-0 right-0 z-30 pb-16 md:pb-20">
+      <div className="absolute bottom-0 left-0 right-0 z-30 pb-20 md:pb-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-3 leading-tight drop-shadow-lg">
             Full-Service Landscaping in the{" "}
             <span className="text-brand-gold-400">Chippewa Valley</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow">
+          <p className="text-base md:text-xl text-gray-100 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow">
             Trusted landscape design, installation, and maintenance since 1995.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link
               href="/contact"
               className="inline-block bg-brand-gold-400 text-brand-green-900 px-8 py-3 rounded-lg font-bold hover:bg-brand-gold-300 transition text-center shadow-lg"
@@ -152,7 +152,7 @@ export default function Hero() {
       </div>
 
       {/* Navigation dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-40 flex gap-2.5">
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-40 flex gap-2.5">
         {slides.map((_, index) => (
           <button
             key={index}

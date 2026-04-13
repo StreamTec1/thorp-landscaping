@@ -11,20 +11,20 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero */}
-      <div className="bg-gradient-to-b from-brand-green-50 to-white py-20">
+      <div className="bg-gradient-to-b from-brand-green-50 to-white py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">Contact Us</h1>
-          <p className="text-xl text-gray-600">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Contact Us</h1>
+          <p className="text-lg md:text-xl text-gray-600">
             Get in touch for a free consultation and quote
           </p>
         </div>
       </div>
 
       {/* Contact Section */}
-      <div className="py-20 bg-white">
+      <div className="py-12 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Contact Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16">
             <div className="bg-gray-50 p-6 rounded-lg text-center">
               <svg
                 className="w-8 h-8 text-brand-green-600 mx-auto mb-3"
@@ -125,7 +125,7 @@ export default function ContactPage() {
           </div>
 
           {/* Service Area Note */}
-          <p className="text-center text-gray-500 text-sm mb-12">
+          <p className="text-center text-gray-500 text-sm mb-8 md:mb-12">
             Serving Chippewa Falls, Eau Claire, Altoona, and the surrounding
             Chippewa Valley area.
           </p>

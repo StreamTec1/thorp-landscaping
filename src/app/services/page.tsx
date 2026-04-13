@@ -99,7 +99,7 @@ export default function ServicesPage() {
   return (
     <div>
       {/* Hero */}
-      <div className="relative overflow-hidden py-20 min-h-[280px]">
+      <div className="relative overflow-hidden py-16 md:py-20 min-h-[240px] md:min-h-[280px]">
         <Image
           src="/images/portfolio/stone-home-pergola.jpg"
           alt="Stone-base home with timber pergola and river rock plantings"
@@ -110,8 +110,8 @@ export default function ServicesPage() {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold text-white mb-4">Our Services</h1>
-          <p className="text-xl text-gray-200 max-w-2xl">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Services</h1>
+          <p className="text-lg md:text-xl text-gray-200 max-w-2xl">
             Comprehensive landscaping solutions for residential and commercial
             properties across the Chippewa Valley
           </p>
@@ -119,13 +119,13 @@ export default function ServicesPage() {
       </div>
 
       {/* Services Grid */}
-      <div className="py-20 bg-white">
+      <div className="py-12 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-20">
+          <div className="space-y-12 md:space-y-20">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-8 md:gap-12 items-center`}
+                className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-6 md:gap-12 items-center`}
               >
                 {/* Image */}
                 <div className="w-full md:w-1/2">
@@ -176,7 +176,7 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA */}
-      <div className="relative overflow-hidden py-16 min-h-[280px]">
+      <div className="relative overflow-hidden py-14 md:py-16 min-h-[260px] md:min-h-[280px]">
         <Image
           src="/images/portfolio/craftsman-home-landscape.jpg"
           alt="Craftsman home with full landscape design and stone accent walls"
@@ -186,10 +186,10 @@ export default function ServicesPage() {
         />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Ready to get started?
           </h2>
-          <p className="text-gray-200 text-lg mb-8">
+          <p className="text-gray-200 text-base md:text-lg mb-8">
             Contact us today for a free estimate on any of our services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

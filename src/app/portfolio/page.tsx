@@ -77,10 +77,10 @@ export default function PortfolioPage() {
   return (
     <div>
       {/* Hero */}
-      <div className="bg-gradient-to-b from-brand-green-50 to-white py-20">
+      <div className="bg-gradient-to-b from-brand-green-50 to-white py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">Our Work</h1>
-          <p className="text-xl text-gray-600 max-w-2xl">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Work</h1>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl">
             Over 30 years of landscape projects across the Chippewa Valley.
             Every project is designed and built to last.
           </p>
@@ -88,16 +88,16 @@ export default function PortfolioPage() {
       </div>
 
       {/* Gallery */}
-      <div className="py-16 bg-white">
+      <div className="py-10 md:py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap gap-3 mb-10">
+          <div className="flex flex-wrap gap-2 md:gap-3 mb-8 md:mb-10">
             {categories.map(cat => (
               <button
                 key={cat.id}
                 onClick={() => setActive(cat.id)}
-                className={`px-5 py-2 rounded-full font-semibold text-sm transition ${
+                className={`px-4 md:px-5 py-2 rounded-full font-semibold text-xs md:text-sm transition ${
                   active === cat.id
                     ? "bg-brand-green-600 text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -195,12 +195,12 @@ export default function PortfolioPage() {
       )}
 
       {/* CTA */}
-      <div className="bg-gray-50 py-16">
+      <div className="bg-gray-50 py-14 md:py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Ready to Start Your Project?
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-base md:text-lg text-gray-600 mb-8">
             Contact us for a free consultation and quote. We&apos;d love to bring
             your vision to life.
           </p>
