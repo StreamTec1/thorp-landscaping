@@ -91,8 +91,8 @@ export default function ServicesPage() {
         "Salt and sand application",
         "Seasonal contracts available",
       ],
-      image: null,
-      imageAlt: "",
+      image: "/images/portfolio/snow-removal.png",
+      imageAlt: "Thorp Landscaping plow truck clearing snow from a parking lot",
     },
   ];
 

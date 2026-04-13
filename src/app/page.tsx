@@ -29,8 +29,8 @@ export default function Home() {
       title: "Snow Removal",
       description:
         "Reliable commercial and residential snow removal to keep your property safe all winter.",
-      image: null,
-      imageAlt: "",
+      image: "/images/portfolio/snow-removal.png",
+      imageAlt: "Thorp Landscaping plow truck clearing snow from a parking lot",
     },
   ];
 
