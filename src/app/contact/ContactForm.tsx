@@ -80,8 +80,8 @@ export default function ContactForm() {
       {formState === "error" && (
         <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 mb-6 text-sm">
           Something went wrong. Please call us at{" "}
-          <a href="tel:+17158289710" className="font-semibold underline">
-            (715) 828-9710
+          <a href="tel:+17155142331" className="font-semibold underline">
+            (715) 514-2331
           </a>{" "}
           or email{" "}
           <a href="mailto:thorpllc@gmail.com" className="font-semibold underline">

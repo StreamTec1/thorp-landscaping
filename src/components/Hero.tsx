@@ -112,7 +112,7 @@ export default function Hero() {
                 alt={slide.alt}
                 fill
                 className="object-cover"
-                priority={index === 0}
+                priority
                 sizes="100vw"
               />
             </div>
@@ -142,10 +142,10 @@ export default function Hero() {
               Get Free Quote
             </Link>
             <a
-              href="tel:+17158289710"
+              href="tel:+17155142331"
               className="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition text-center"
             >
-              Call (715) 828-9710
+              Call (715) 514-2331
             </a>
           </div>
         </div>

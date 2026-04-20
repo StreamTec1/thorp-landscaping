@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Thorp Landscaping",
   },
   description:
-    "Full-service landscape design and installation in Chippewa Falls & Eau Claire, WI. Serving the Chippewa Valley for over 30 years. A+ BBB rated. Call (715) 828-9710.",
+    "Full-service landscape design and installation in Chippewa Falls & Eau Claire, WI. Serving the Chippewa Valley for over 30 years. A+ BBB rated. Call (715) 514-2331.",
   keywords:
     "landscaping Chippewa Falls WI, landscaping Eau Claire WI, landscape design Chippewa Valley, snow removal Eau Claire, lawn care Wisconsin, hardscaping, Thorp Landscaping",
   authors: [{ name: "Thorp Landscaping, LLC" }],
@@ -72,7 +72,7 @@ export default function RootLayout({
               "@type": "LandscapingBusiness",
               name: "Thorp Landscaping, LLC",
               image: "https://thorp-landscaping.com/images/thorp-logo.png",
-              telephone: "+1-715-828-9710",
+              telephone: "+1-715-514-2331",
               email: "thorpllc@gmail.com",
               address: {
                 "@type": "PostalAddress",

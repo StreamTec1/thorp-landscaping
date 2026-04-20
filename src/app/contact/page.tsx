@@ -41,10 +41,10 @@ export default function ContactPage() {
               </svg>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Phone</h3>
               <a
-                href="tel:+17158289710"
+                href="tel:+17155142331"
                 className="text-brand-green-600 hover:text-brand-green-500 font-medium"
               >
-                (715) 828-9710
+                (715) 514-2331
               </a>
             </div>
 

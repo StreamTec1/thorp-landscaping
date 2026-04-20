@@ -212,10 +212,10 @@ export default function PortfolioPage() {
               Get Free Quote
             </Link>
             <a
-              href="tel:+17158289710"
+              href="tel:+17155142331"
               className="inline-block border-2 border-brand-green-600 text-brand-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-brand-green-50 transition"
             >
-              Call (715) 828-9710
+              Call (715) 514-2331
             </a>
           </div>
         </div>
